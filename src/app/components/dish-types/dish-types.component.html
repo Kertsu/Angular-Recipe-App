@@ -1,0 +1,13 @@
+<div class="px-4 pt-4 border-red-500 border">
+  <div
+    class="border-green-500 border grid grid-flow-col gap-4 media-scroller overflow-x-auto snap-start snap-x snap-mandatory"
+  >
+    <ng-container *ngFor="let dishType of dishTypes">
+      <div
+        class="snap-start p-2 bg-gray-200 rounded-full shadow-gray-500 shadow-sm"
+      >
+        <h3 class="w-fit">{{ dishType }}</h3>
+      </div>
+    </ng-container>
+  </div>
+</div>

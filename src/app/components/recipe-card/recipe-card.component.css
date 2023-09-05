@@ -1,0 +1,6 @@
+img {
+    inline-size: 100%;
+    aspect-ratio: 15 / 10;
+    object-fit: cover;
+    
+}

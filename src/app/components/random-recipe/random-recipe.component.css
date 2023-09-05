@@ -1,0 +1,5 @@
+.media-scroller{
+    grid-auto-columns: 51%;
+    overscroll-behavior-inline: contain;
+    gap: 1rem;
+}

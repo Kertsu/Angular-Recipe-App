@@ -1,0 +1,5 @@
+.type-scroller{
+    grid-auto-columns: 25%;
+    overscroll-behavior-inline: contain;
+    gap: 1rem;
+}
