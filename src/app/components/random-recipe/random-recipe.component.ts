@@ -9,15 +9,19 @@ import { WebService } from 'src/app/services/web.service';
 })
 export class RandomRecipeComponent implements OnInit{
 
+  isLoading!: boolean ;
+
   randomRecipes: randomRecipe[] =[]
  constructor(private webService:WebService){
 
  }
 
  ngOnInit(): void {
+    this.isLoading = true;
+
     //  this.webService.getRandom().subscribe((recipes) => {
     //    this.randomRecipes = recipes.recipes
-    //    console.log(this.randomRecipes)
+    //    this.isLoading = false;
     //  })
 
     this.randomRecipes = [

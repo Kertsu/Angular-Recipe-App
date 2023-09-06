@@ -3,9 +3,11 @@
     <h3 class="text-xl font-semibold text-text-charcoal-gray mb-1 ">
       Random Recipes
     </h3>
-    <div class=" grid grid-flow-col media-scroller overflow-x-auto snap-start snap-x snap-mandatory">
+
+    <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+    <div *ngIf="!isLoading" class=" grid grid-flow-col media-scroller overflow-x-auto snap-start snap-x snap-mandatory ">
       <ng-container *ngFor="let recipe of randomRecipes">
-        <app-recipe-card [recipe]="recipe"></app-recipe-card>
+        <app-recipe-card class="flex" [recipe]="recipe"></app-recipe-card>
       </ng-container>
     </div>
   </div>

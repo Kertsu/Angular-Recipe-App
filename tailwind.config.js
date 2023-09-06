@@ -14,6 +14,9 @@ module.exports = {
         'text-charcoal-gray':'#333333',
         'text-dark-green':'#00695C',
         'text-slate-blue':'#5E90A7'
+      },
+      backgroundImage:{
+        'card-svg': "url('assets/svg/blob-scatter-haikei.svg')"
       }
     },
   },

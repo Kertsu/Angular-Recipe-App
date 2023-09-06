@@ -14,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
 import { RandomRecipeComponent } from './components/random-recipe/random-recipe.component';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 import { DishTypesComponent } from './components/dish-types/dish-types.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 
 const icons = {
@@ -29,6 +30,7 @@ const icons = {
     RandomRecipeComponent,
     RecipeCardComponent,
     DishTypesComponent,
+    LoadingSpinnerComponent,
 
   ],
   imports: [
