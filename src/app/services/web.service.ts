@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -57,14 +57,43 @@ export class WebService {
     'Vietnamese',
   ];
 
+  mealTypes: any = [
+    'main course',
+    'side dish',
+    'dessert',
+    'appetizer',
+    'salad',
+    'bread',
+    'breakfast',
+    'soup',
+    'beverage',
+    'sauce',
+    'marinade',
+    'fingerfood',
+    'snack',
+    'drink',
+  ]
  
   constructor(private http: HttpClient) {}
 
   baseUrl = `https://api.spoonacular.com/recipes`;
 
   getRandom(): Observable<any> {
-    const randomIndex = Math.floor(Math.random() * this.tags.length)
-    const randomTag = this.tags[randomIndex]
-    return this.http.get(`${this.baseUrl}/random?number=10&tags=${randomTag.toLowerCase()}`, httpOptions);
+    const randomIndex = Math.floor(Math.random() * this.tags.length);
+    const randomTag = this.tags[randomIndex];
+
+    return this.http.get(`${this.baseUrl}/random?number=10&tags=${randomTag.toLowerCase()}`, httpOptions)
   }
+
+  getRandomMealType(): Observable<any>{
+    const randomIndex = Math.floor(Math.random() * this.mealTypes.length)
+    const randomMealType = this.mealTypes[randomIndex]
+    return this.http.get(`${this.baseUrl}/random?number=10&tags=${randomMealType.toLowerCase()}`, httpOptions).pipe(
+      map((response:any) => {
+
+        return { responseData: response, tag: randomMealType };
+      })
+    );
+  }
+  
 }

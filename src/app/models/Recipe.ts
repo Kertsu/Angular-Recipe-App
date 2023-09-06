@@ -1,4 +1,4 @@
-export interface randomRecipe {
+export interface randomFood {
     id:number, 
     analyzedInstructions : AnalyzedInstructions[],
     title: string,

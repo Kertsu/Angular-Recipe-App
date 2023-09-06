@@ -5,9 +5,9 @@
     </h3>
 
     <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-    <div *ngIf="!isLoading" class=" grid grid-flow-col media-scroller overflow-x-auto snap-start snap-x snap-mandatory ">
+    <div *ngIf="!isLoading" class=" grid grid-flow-col media-scroller overflow-x-auto snap-start snap-x snap-mandatory py-4">
       <ng-container *ngFor="let recipe of randomRecipes">
-        <app-recipe-card class="flex" [recipe]="recipe"></app-recipe-card>
+        <app-recipe-card class="flex" [recipe]="recipe" [type]="'random-recipe'"></app-recipe-card>
       </ng-container>
     </div>
   </div>
